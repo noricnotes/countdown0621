@@ -5,7 +5,6 @@
 <title>大会カウントダウン</title>
 
 <style>
-
 body{
 text-align:center;
 font-family:sans-serif;
@@ -22,7 +21,6 @@ font-size:38px;
 margin:20px;
 font-weight:bold;
 }
-
 </style>
 
 </head>
@@ -35,13 +33,15 @@ font-weight:bold;
 
 <script>
 
-const total = 108
 const target = new Date("2026-06-21")
 const today = new Date()
 
-const diff = Math.ceil((target - today) / (1000*60*60*24))
+target.setHours(0,0,0,0)
+today.setHours(0,0,0,0)
 
-let number = total - diff 
+const diff = Math.floor((target - today) / (1000*60*60*24))
+
+let number = diff
 
 if(number < 1){number = 1}
 if(number > 108){number = 108}
