@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>大会カウントダウン</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:sans-serif;
+background:#ffffff;
+}
+
+img{
+max-width:95%;
+height:auto;
+}
+
+.count{
+font-size:38px;
+margin:20px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="count" id="count"></div>
+
+<img id="photo">
+
+<script>
+
+const total = 108
+const target = new Date("2026-06-21")
+const today = new Date()
+
+const diff = Math.ceil((target - today) / (1000*60*60*24))
+
+let number = total - diff + 1
+
+if(number < 1){number = 1}
+if(number > 108){number = 108}
+
+document.getElementById("count").innerHTML =
+"県大会まで あと " + diff + " 日"
+
+document.getElementById("photo").src =
+number + ".PNG"
+
+</script>
+
+</body>
+</html>
