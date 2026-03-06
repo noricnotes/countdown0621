@@ -39,7 +39,7 @@ const today = new Date()
 target.setHours(0,0,0,0)
 today.setHours(0,0,0,0)
 
-const diff = Math.floor((target - today) / (1000*60*60*24)) - 1  
+const diff = Math.floor((target - today) / (1000*60*60*24)) + 1 
 
 let number = diff
 
@@ -47,7 +47,7 @@ if(number < 1){number = 1}
 if(number > 108){number = 108}
 
 document.getElementById("count").innerHTML =
-"ヤング県予選まで あと " + diff + " 日"
+"ヤング県予選まで あと " + diff + " 日" 
 
 document.getElementById("photo").src =
 number + ".PNG"
